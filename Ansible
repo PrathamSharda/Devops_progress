@@ -1,0 +1,45 @@
+################################################################
+# Notes for Ansible
+#################################################################
+#date :6 August 2024
+Ansible(PUSH MACHINISM): it is a tool for configure management(it is use configure 100's of server simulatneously, )
+
+Why ansbile over other tools:
+
+*) it is a agentless model: while other tools like requirement to setup a master slave architure (first a master node should be created and then cinfigure other servers as slave(PULL MACHINISM ),
+   In ansbile we can setup server by listing their IP in inventory list and makeing the connection of server password less with make setting up and tear down of server far easier.
+
+*)Dynamic inventory: A powerful tool that make ansible reponsible for configuring and management of a server( with the help of some setting) without even adding them in to the inventory list.
+
+*) good support for windows and linux
+
+*) no new language to learn (format is YAML but scripting language is python)
+
+*)sharing of modules.
+
+###################################################################################
+
+how to make a server to do passwordless authentication:
+
+*) make a EC2 instance for Ansible
+
+*) Make a directory fo ansible and with sudo apt install ansible, install ansible in that folder
+
+*)create a ssh-keygen in the ansible server that will help in creating a private/public key(dont give private key to anyone) (it will be in /home/ubuntu/.ssh)
+
+*)Create a Target server for that ansible will configure and manage
+
+*)create the key the same way in target server and copy the public key of ansible server to you target server( in ~/.ssh/ authorized_keys )
+
+*) Hence this creates a password less authtentication and now you can successful log into target server from ansible server (use the private IP address as both are in the same VPC)
+
+
+How to write ansible playbook:
+ *)To run command using Ansible you dont always have to write an ansible playbook, you can run the command on python as is.
+
+ *)First command that was taught 'ansible -i inventory all/(private ip) -m "shell" -a "touch devopsclass" ' (which created a file in the target PC, these are ansible adhoc commands)
+ 
+(use Ansible documentation to learn newer and more commands)
+ *)  Server can be grouped all you need is to add the name of the server inside[] above the servers you want to group and when calling using ansible adhoc command instead of all or ip address use teh name of teh server you put inside [].
+
+*)
