@@ -7,7 +7,7 @@ Ansible(PUSH MACHINISM): it is a tool for configure management(it is use configu
 Why ansbile over other tools:
 
 *) it is a agentless model: while other tools like requirement to setup a master slave architure (first a master node should be created and then cinfigure other servers as slave(PULL MACHINISM ),
-   In ansbile we can setup server by listing their IP in inventory list and makeing the connection of server password less with make setting up and tear down of server far easier.
+   In ansbile we can setup server by listing their IP in inventory list and makeing the connection of server password less which make setting up and tear down of server far easier.
 
 *)Dynamic inventory: A powerful tool that make ansible reponsible for configuring and management of a server( with the help of some setting) without even adding them in to the inventory list.
 
@@ -42,4 +42,49 @@ How to write ansible playbook:
 (use Ansible documentation to learn newer and more commands)
  *)  Server can be grouped all you need is to add the name of the server inside[] above the servers you want to group and when calling using ansible adhoc command instead of all or ip address use teh name of teh server you put inside [].
 
-*)
+#(AUG 10)#
+
+(playbook)
+
+
+to write a play their are few things you have to keep in mind:
+
+-> it is a yaml file so it should end in .yml
+
+-> start of the page it should have (---) to indecate it is a playbook
+
+(example)
+##############################################################
+
+---
+- name: (name of you program you are about to run)
+  hosts: (all the servers in your inventory you want to run it on)
+  become: (for getting root peveliages, to switch to any user use become_user)
+
+  tasks:
+  - name: (name of the program)
+    apt: (this is pakage manager module that helps you downloads things in ansible)
+
+      name: (nam of the service you want to install)
+      state: ( which state you want it in " present" to install it) 
+   ## {the following command can also be executed with "shell: apt install "service" " but this would cause the file to be os dependent the above code removes it)
+    
+   - name: (name of another program)
+     service:
+         - name: (name of the module you want to start)
+           state: (do you want to start or stop the service)
+## {the following command can also be executed with "shell: systemctl (start/stop ) "service" " but this would cause the file to be os dependent the above code removes it)   
+     ############################################################################
+
+(to execute the playbook, use the ansible-playbook command (ansible-playbook -i {name of inventory} ))
+
+{Ansible Roles: efficient way for writitng ansible playbook that helps in writing more complex playbooks}
+
+A role can be redefined by the following :
+
+(use the galaxy command)
+-> ansible-galaxy init (name of the directory you want to make)
+
+(this will create various files instead of a single a single playbook can be broken into many and write things like tasks and operations for it)
+
+
