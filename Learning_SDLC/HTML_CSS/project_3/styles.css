@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+ html,body{
+    height:100%;
+    font-family: "Lato", sans-serif;
+    font-weight:400;
+    font-size:50px;
+    color:rgb(228, 222, 222);
+
+}
+
+.image{
+    height:100%;
+    background-image: url( https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg);
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.box{
+    width:fit-content;
+    height:110px;
+    padding:30px 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#535353e7;
+  
+}
+.discriptionbox1{
+    width:100%;
+    max-height:fit-content;
+    font-size:16px;
+    color:rgb(7, 63, 7);
+    
+}
+.content{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    padding:33px;
+}
+h1{
+    font-size:40px;
+    font-weight: 20;
+}
+p{
+    margin-top:10px;
+    font-size:18px;  
+}
+.image2{
+    height:55%;
+    background-image: url(https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?cs=srgb&dl=pexels-pixabay-257360.jpg&fm=jpg);
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.color2{
+    background-color:#333;
+}
+.p1{
+    color:#ccc;
+   
+}
+.image3{
+    height:55%;
+    background-image: url(https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg);
+    background-attachment: fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.explore{
+    width:fit-content;
+    height:100px;
+    padding:0 20px;
+    
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:#b6b6b644;
+   
+}
+.parallax{
+    font-weight:300;
+   
+}

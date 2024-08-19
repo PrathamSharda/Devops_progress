@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="applybox">
+            <h1>Job Application <span>(Web)</span></h1>
+            <form action="action.php" class="data">
+                <div class="elements">
+                    <label for="name">First name</label>
+                    <input type="text" placeholder="First Name"class="first_name_box">
+                </div>
+                <div class="elements">
+                    <label for="name">Last name</label>
+                    <input type="text" placeholder="Last Name" class="last_name_box">
+                </div>
+                <div class="elements">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email" class="email_box">
+                </div>
+                
+                <div class="elements">
+                    <label for="name">Job role</label>
+                   <select name="Job Role"  class="job_role_box">
+                    <option value="">Select Job Role</option>
+                    <option value="Frontend Developer">Frontend Developer</option>
+                    <option value="Backend Developer">Backend Developer</option>
+                    <option value="Fullstack Developer">Fullstack Developer</option>
+                    <option value="SRE">SRE</option>
+                   </select>
+                </div>
+
+                <div class="address">
+                    <label for="name">Address</label>
+                   <textarea class="address_box" rows="4" cols="50" placeholder="Address......"> </textarea>
+                </div>
+                <div class="elements">
+                    <label for="name">City</label>
+                    <input type="text" placeholder="city" class="city_box">
+                </div>
+                <div class="elements">
+                    <label for="name">Pincode</label>
+                    <input type="number" placeholder="pincode" class="pincode_box">
+                </div>
+                <div class="elements">
+                    <label for="name">Date</label>
+                    <input type="date" value="current" class="date_box">
+                </div>
+                <div class="elements">
+                    <label for="name">Upload your CV</label>
+                    <input type="file" class="ipload_box">
+                </div>
+                
+            </form>
+            <div class="button">
+                <button type="submit">Apply Now</button>
+            </div>
+        </div>
+       
+    </div>
+    
+</body>
+</html>
